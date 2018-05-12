@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.AccountBaseMapper">
+    <!-- 查询所有model.AccountBase -->  
+<!--     <select id="queryAll" resultType="model.AccountBase" >  
+        select * from t_account_base   
+    </select> -->
+    
+    <!-- 根据ID查询model.AccountBase -->  
+<!--     <select id="queryByName" resultType="model.AccountBase" >  
+        select * from t_account_base
+        <where>  
+            <if test="_parameter != null">  
+                name like CONCAT('%','${_parameter}','%' )  
+            </if>  
+        </where>  
+    </select> -->
+    
+    <!-- 插入AccountBase --> 
+    <insert id="insert" >
+    	insert into 
+    	t_account_base 
+    	(name,kind,account,password,annotation,username,salt) 
+    	VALUES
+    	(#{name}, #{kind},#{account},#{password},#{annotation},#{username},#{salt})
+    </insert> 
+    
+</mapper>
